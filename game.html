@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo</title>
+    <!--Bootstrap css-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/css/uikit.min.css" />
+        <!--Bootstrap scripts-->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+         <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/fixedheader/3.1.6/js/dataTables.fixedHeader.min.js"></script>
+      <style>
+          .div{
+              background-color: azure;
+              width: 500px;
+              height: 200px;
+              border: 1px solid gray;
+          }
+
+      </style>
+  </head>
+    <body>
+      <div class='container'>
+        <div class='row' id='res'>
+            
+        </div>
+        <div>
+            <button onclick='play()' class='btn btn-primary'>
+                Play
+            </button>
+        </div>
+      </div>
+
+    </body>
+    <script>
+        var data = [`<div class='col-4 shadow-sm p-4 bg-primary'>
+
+                    </div>`,`
+                    <div class='col-4 shadow-sm p-4 bg-warning'>
+
+                    </div>
+                    `,`
+                    <div class='col-4 shadow-sm p-4 bg-danger'>
+
+                    </div>
+                    `,`
+                    <div class='col-4 shadow-sm p-4 bg-dark'>
+
+                    </div>`]
+            function play(){
+                $("#res").text("")
+            var x = 0     
+            var added = []   
+            while(x < data.length ){
+                d = (data[Math.floor(Math.random() * data.length)])
+                if(!added.includes(d)){
+                    added.push(d)
+                    $("#res").append(d)
+                    x += 1
+                }
+            }
+            }
+
+            
+    </script>
+</html>
